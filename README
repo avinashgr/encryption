@@ -1,0 +1,28 @@
+The code java_crypto_ctr and node_crypto_ctr are for demo of aes-ctr-256
+
+
+Create a symmetric key for aes-ctr-256
+--------------------------------------
+
+openssl rand -base64 32
+
+to encrypt in java
+------------------
+ cd ~/development/encryption/java_crypto_ctr/src/main/java/ 
+ run the command below:
+  java  com.crypto.cryptutil.testEncryptDecryptUtil encrypt/decrypt <<plaintext/ciphertext>> <<key as 32 byte base64 string>>
+  java  com.crypto.cryptutil.testEncryptDecryptUtil encrypt /kTpHrNDXoE4UnmfhvBb917tUaiEag== ZDy+N7SFSTOMId+2Un4zGZCHL++3sIz5FWkGxNayQps=
+
+Alternatively
+-------------
+ cd ~/development/encryption/java_crypto_ctr/
+ mvn install -DskipTests=true
+ cd /target
+ java -cp cryptutil-0.0.1-SNAPSHOT.jar encrypt /kTpHrNDXoE4UnmfhvBb917tUaiEag== ZDy+N7SFSTOMId+2Un4zGZCHL++3sIz5FWkGxNayQps=
+
+to decrypt and encrypt in node js
+---------------------------------
+ cd ~/development/encryption/node_crypto_ctr
+ run the command below:
+   node encryption.js '<<encrypt/decrypt>>' '<<plaintext/ciphertext>>' '<<key as 32 byte base64 string>>'
+   node encryption.js 'decrypt' 'KBmln2zU/NgFBEJW+1pwzz0kLTcyxYT84I3bHK5YNWT7h/qHbgYd9UJ7jRO45NwpUu97R5VQELAiZb6D/PyZN1Q=' 'ZDy+N7SFSTOMId+2Un4zGZCHL++3sIz5FWkGxNayQps='
